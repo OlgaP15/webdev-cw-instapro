@@ -1,20 +1,34 @@
 {
-  "name": "webdev-cw-instapro-1",
-  "version": "1.0.0",
-  "description": "MVP социальной сети для обмена фотографиями",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OlgaP15/webdev-cw-instapro.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/OlgaP15/webdev-cw-instapro/issues"
-  },
-  "homepage": "https://github.com/OlgaP15/webdev-cw-instapro#readme"
+    "dependencies": {
+        "date-fns": "^4.1.0",
+        "webpack": "^5.99.9",
+        "webpack-cli": "^6.0.1"
+    },
+    "name": "webdev-cw-instapro-1",
+    "version": "1.0.0",
+    "description": "MVP социальной сети для обмена фотографиями",
+    "main": "index.js",
+    "scripts": {
+        "dev": "webpack --mode development --watch",
+        "build": "webpack --mode production"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/OlgaP15/webdev-cw-instapro.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/OlgaP15/webdev-cw-instapro/issues"
+    },
+    "homepage": "https://github.com/OlgaP15/webdev-cw-instapro#readme",
+    "devDependencies": {
+        "@eslint/js": "^9.30.0",
+        "eslint": "^9.30.0",
+        "eslint-config-prettier": "^10.1.5",
+        "eslint-plugin-prettier": "^5.5.1",
+        "globals": "^16.2.0",
+        "prettier": "^3.6.2"
+    }
 }
