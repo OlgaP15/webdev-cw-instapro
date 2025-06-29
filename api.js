@@ -1,7 +1,7 @@
 // Замени на свой, чтобы получить независимый от других набор данных.
 // "боевая" версия инстапро лежит в ключе prod
 const personalKey = "prod";
-const baseHost = "https://wedev-api.sky.pro/api/v1";
+const baseHost = "https://webdev-hw-api.vercel.app";
 const postsHost = `${baseHost}/api/v1/${personalKey}/instapro`;
 
 export function getPosts({ token }) {
@@ -39,6 +39,25 @@ export function getUserPosts({ token, userId }) {
     .then((data) => {
       return data.posts;
     });
+}
+// Добавляем новый пост
+export function addPost({ token, description, imageUrl }) {
+  return fetch(postsHost, {
+    method: "POST",
+    headers: {
+      Authorization: token,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      description,
+      imageUrl,
+    }),
+  }).then((response) => {
+    if (response.status === 400) {
+      throw new Error("Неверные данные поста");
+    }
+    return response.json();
+  });
 }
 
 export function registerUser({ login, password, name, imageUrl }) {
